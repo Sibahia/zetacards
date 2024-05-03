@@ -1,0 +1,208 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import '@fontsource-variable/inter';
+import SaimonCards from '../components/SaimonCards.astro';
+import Shape from '../svg/shape.astro';
+
+
+/* 
+COLORS:
+Ash Gray #C2D3CD
+Wenge #C2D3CD
+ */
+
+---
+
+<Layout title="Welcome to Astro.">
+
+	<!-- <div class="cards-stage">
+		<div class="card-img">
+			<img src="https://images.wikidexcdn.net/mwuploads/wikidex/4/4b/latest/20190227001554/Melmetal.png" height="360" alt="">
+		</div>
+		<div class="card-poke">
+
+			<div class="card-title">
+				<h>Melmetal</h>
+			</div>
+
+			<div class="card-stats">
+				<div class="card-info">
+
+					<div class="stats-title">
+						<h>Stats</h>
+					</div>
+					<div class="stats-info">
+						<p>HP: 10</p>
+						<p>Attack: 12</p>
+						<p>Defense: 6</p>
+						<p>Sp. Attack: 9</p>
+						<p>Sp. Def: 6</p>
+						<p>Speed: 7</p>
+					</div>
+
+				</div>
+
+			<div class="card-type">
+
+				<div class="stats-title">
+					<h>Type</h>
+				</div>
+				<div class="stats-type">
+					<p>Psychic</p>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="stats-rarity">
+			<p>RARE</p>
+		</div>
+
+		</div>
+	</div> -->
+
+	<div class="box">
+		<div class="box-img">
+			<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d462e0a4-9cac-4d97-bbbd-1e536e0886d7/dea62da-a062a07c-3123-46c7-a586-1e465862ee12.png/v1/fit/w_828,h_994/pokemon___shiny_latias__hd_anime_render__by_hankstermanart_dea62da-414w-2x.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTUzNiIsInBhdGgiOiJcL2ZcL2Q0NjJlMGE0LTljYWMtNGQ5Ny1iYmJkLTFlNTM2ZTA4ODZkN1wvZGVhNjJkYS1hMDYyYTA3Yy0zMTIzLTQ2YzctYTU4Ni0xZTQ2NTg2MmVlMTIucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.s4_wWGbfSQgLlwsKdzBCbxtVniHiYIYOPFv-dwRraKk" alt="">
+		</div>
+		<div class="box-text">
+			<p>Conoce todo sobre los <span class="p_color">Pokemons</span></p>
+			<button class="box-btn">Buscar</button>
+		</div>
+	</div>
+
+</Layout>
+
+<SaimonCards></SaimonCards>
+
+<style>
+	* {
+		margin: 0;
+		font-family: 'Inter Variable', sans-serif;
+		box-sizing: border-box;
+	} 
+
+	html {
+		scrollbar-color: #13151a #2B233C ;
+}
+
+	.box {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.box-text {
+		padding-right: 50px;
+		text-transform: uppercase;
+	}
+
+	.box-img {
+		width: 40%;
+		
+	}
+
+
+	p {
+		color: white;
+		font-size: 2.2rem;
+		font-weight: 600;
+	}
+
+	.p_color {
+		color: #46eeb3;
+
+	}
+
+	.cards-stage {
+		margin: 5vh auto;
+		display: block;
+		justify-items: center;
+		width: 200px;
+	}
+
+	.card-img {
+		z-index: 10;
+		top: 90px;
+		display: flex;
+		justify-content: center;
+		position: relative;
+	}
+
+	.card-poke {
+		text-align: center;
+		z-index: 8;
+		position: relative;
+		padding: 30px 10px;
+		width: 200px;
+		height: 300px;
+		border-radius: 0 0 20px 20px;
+		background-color: #F2F2F2;
+	}
+
+	.card-title h {
+		font-family: 'Inter Variable';
+		text-decoration: none;
+		color: #2B233C;
+		font-weight: 800;
+		font-size: 1.6rem;
+		}
+
+		.card-stats {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.stats-title {
+			padding: 3px;
+			font-weight: 500;
+			font-size: 1rem;
+		}
+
+		.stats-type {
+			padding: 2px;
+			border-radius: 4px;
+			background-color: #D73CBE;
+			color: white;
+		}
+
+		.stats-info {
+			font-size: 0.9rem;
+		}
+
+		.stats-type p {
+			font-size: 0.9rem;
+		}
+
+		.stats-rarity {
+			margin: 10px;
+			color: #F2F2F2;
+			font-weight: 600;
+			font-size: 1rem;
+		}
+
+		.stats-rarity p {
+			padding: 10px;
+			background-color: #4B17E1;
+			border-radius: 20px;
+		}
+
+		.box-btn {
+			padding: 16px 36px;
+			color: #46eeb3;
+			font-size: 16px;
+			font-weight: 700;
+			text-transform: uppercase;
+			border-radius: 25px;
+			background: white;
+		}
+
+		.box-btn:hover {
+			color: white;
+			transition: 1s;
+			background: #46eeb3;
+		}
+
+</style>

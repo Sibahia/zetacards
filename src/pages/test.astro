@@ -1,0 +1,82 @@
+---
+import Layout from "../layouts/Layout.astro"
+import poke from "../components/pokemon.astro";
+---
+
+<Layout title="Carta">
+
+    <div class="yigou">
+
+        <div class="informacion">
+            <div class="id">
+                <p>#0001</p>
+            </div>
+            <div class="rareza">
+                <p>COMÚN</p>
+            </div>
+        </div>
+
+        <div class="img">
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png" alt="">
+        </div>
+
+        <div class="name">
+            <h1>Charizard</h1>
+        </div>
+
+        <div class="talla">
+
+        </div>
+    
+    
+    
+    
+    </div>
+
+</Layout>
+
+//      y    x
+
+<style>
+
+    .yigou {
+              /* y    x */
+
+        height: auto;
+        width: 350px;
+        margin: 5vh;
+        border-radius: 25px;
+        border: #f51735 2px solid;
+        background: linear-gradient(180deg,
+                                hsla(93, 8%, 8%),
+                                #f51735);
+    }
+
+    .informacion {
+        color:azure;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .informacion .id p {
+        padding-right: 60px;
+        font-size: 18px;
+        font-weight:400;
+    }
+
+    img {
+        margin: auto;
+        width: 75%;
+    }
+
+    .name h1 {
+        color: rgb(255, 255, 255);
+        padding: 18px;
+        text-align: center;
+        font-weight: 500;
+    }
+
+    
+
+</style>

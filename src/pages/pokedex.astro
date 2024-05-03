@@ -1,0 +1,50 @@
+---
+import DexCard from "../components/DexCard.astro";
+import Layout from "../layouts/Layout.astro";
+
+const getSpeciesPokemon = async function(pokeId) {
+    return await fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokeId}`)
+    .then(res => res.json())
+    .catch(err => console.log(err))
+}
+
+const getPokemonData = async function(pokeId) {
+   return await fetch(`https://pokeapi.co/api/v2/pokemon/${pokeId}`)
+   .then(res => res.json())
+   .catch(err => console.log(err))
+}
+
+let dataPokemonInfo = [];
+
+for (let x = 1; x <= 150; x++) {
+    let dataPokemons = await getPokemonData(x);
+    let dataSpecies = await getSpeciesPokemon(x);
+
+    dataPokemonInfo.push({ infoPokemons: dataPokemons, infoSpecies: dataSpecies})    
+}
+
+---
+
+<Layout title="PokeDex">
+    <div class="grid gap-2 sm:grid-cols-3 lg:grid-cols-5">
+    {
+
+
+        dataPokemonInfo.map((dataPoke) => 
+                <DexCard 
+                name={dataPoke.infoPokemons.name.charAt(0).toUpperCase() + dataPoke.infoPokemons.name.slice(1)}
+                id={dataPoke.infoPokemons.id}
+                mythical={dataPoke.infoSpecies.is_mythical}
+                legendary={dataPoke.infoSpecies.is_legendary}
+                color={dataPoke.infoPokemons.types[0].type.name}
+                types={dataPoke.infoPokemons.types.map((type) => type.type.name)}
+                weight={dataPoke.infoPokemons.weight / 10}
+                height={dataPoke.infoPokemons.height / 10}
+                img={dataPoke.infoPokemons.sprites.other['official-artwork'].front_default}
+                />
+                )
+
+    }
+    </div>
+</Layout> 
+

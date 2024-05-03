@@ -1,0 +1,357 @@
+---
+ interface Props {
+    name: string;
+    img: string;
+    mythical: boolean;
+    legendary: boolean;
+    color: string;
+    id: string;
+    types: string;
+    weight: number;
+    height: number;
+    
+}
+
+const { name, img, id, types, weight, height, color, mythical, legendary } = Astro.props;
+const data = [];
+
+// const getPokemonData = async function(number) {
+//    return await fetch(`https://pokeapi.co/api/v2/pokemon/${number}`)
+//    .then(res => res.json())
+//    .then(data => data)
+//    .catch(err => console.log(err))
+// }
+
+// for (let x = 1; x <= 20; x++) {
+//     let dataPokemons = await getPokemonData(x);
+
+//     data.push(dataPokemons)
+
+//     // dataPokemons.then(p => {
+//     //     data.push(p);
+
+//     //     console.log(data)
+//     //     // console.log(p);
+//     // })
+        
+// }
+
+let rarity;
+
+// console.log(legendary + " || " + mythical)
+
+if (legendary == true || mythical == true) {
+    rarity = 'Rare'
+} else {
+    rarity = 'Common'
+}
+
+let pokeId = id;
+
+if (pokeId < '10') {
+    pokeId = `#000${id}`
+} 
+else if (pokeId < '100') {
+    pokeId = `#00${pokeId}`
+} 
+else if (pokeId < '1000') {
+    pokeId = `#0${pokeId}`
+}
+
+let pokeTypes = types.join(' ');
+
+// if (!legendary == false && !mythical == false) {
+//     rarity = 'Common'
+// }
+
+
+---
+
+
+<div class=`box-card ${color}`>
+
+    <div class="card-status">
+        <div class="card-id">
+            <p>{pokeId}</p>
+        </div>
+        <div class=`card-color ${rarity}`>
+            <p>{rarity}</p>
+        </div>
+
+        </div>
+
+    <div class="card-img">
+        <img src={img} alt="">
+    </div>
+
+    <div class="card-name">
+        <p>{name}</p>
+    </div>
+
+    <div class="card-info">
+        <div class="card-weight">
+            <div class="card-title">
+                <p>Weight</p>
+            </div>
+            <div class="card-value">
+                <p>{weight} kg</p>
+            </div>
+        </div>
+        <div class="card-height">
+            <div class="card-title">
+                <p>Height</p>
+            </div>
+            <div class="card-value">
+                <p>{height} m</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-type">
+        <p>Type <span class="type_color">{pokeTypes}</span></p>
+    </div>
+
+</div>
+
+<style>
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/poppins@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/poppins@latest/latin-400-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+    }
+
+    * {
+        font-family: 'Poppins', sans-serif;
+        box-sizing: border-box;
+    }
+
+    .box-card {
+        margin: 4vh auto;
+        display: block;
+        box-sizing: border-box;
+        height: auto;
+        width: 160px;
+        /* background: rgb(2,0,36); */
+        /* background: linear-gradient(180deg,
+                                hsla(93, 8%, 8%),
+                                rgb(193, 22, 228)); */
+        /* background: radial-gradient(circle, rgba(2,0,36,0) 55%, rgba(94,44,199,1) 95%); */
+        border-radius: 10px;
+    }
+
+    .card-status {
+        margin: 10px;
+        padding: 2px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .card-color {
+        color: white;
+        padding: 4px;
+        font-size: 10px;
+        border-radius: 10px;
+    }
+
+    .card-color p {
+        font-weight: 300;
+    }
+
+    .card-img {
+        padding: 4px;
+        margin: auto;
+        width: 9rem;
+        border-radius: 80% 80% 0 0;
+    }
+
+    .card-id {
+        color: white;
+        font-size: 12px;
+    }
+
+    .card-name {
+        color: white;
+        text-align: center;
+        padding: 10px;
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+
+    .card-info {
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .card-title {
+        color: #cac7c7;
+        font-size: 14px;
+    }
+
+    .card-value {
+        text-align: center;
+        color: white;
+        font-size: 12px;
+    }
+
+    .card-type {
+        display: flex;
+        padding: 10px;
+        font-size: 14px;
+        color: #cac7c7;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .type_color {
+        font-size: 12px;
+        color: white;
+    }
+
+    .normal {
+        border: #A8A77A 2px solid;
+        background: linear-gradient(180deg,
+                                hsla(93, 8%, 8%),
+                                #A8A77A);
+    }
+
+    .fire {
+        border: #EE8130 2px solid;
+        background: linear-gradient(180deg,
+                                hsla(93, 8%, 8%),
+                                #EE8130);
+    }
+
+    .water {
+        border: #6390F0 2px solid;
+        background: linear-gradient(180deg,
+                                hsla(93, 8%, 8%),
+                                #6390F0);
+    }
+
+    .electric {
+        border: #F7D02C 2px solid;
+        background: linear-gradient(180deg,
+                                hsla(93, 8%, 8%),
+                                #F7D02C);
+    }
+
+    .grass {
+        border: #7AC74C 2px solid;
+        background: linear-gradient(180deg,
+                                hsla(93, 8%, 8%),
+                                #7AC74C);
+    }
+
+    .ice {
+        border: #96D9D6 2px solid;
+        background: linear-gradient(180deg,
+                                hsla(93, 8%, 8%),
+                                #96D9D6);
+    }
+
+    .fighting {
+        border: #C22E28 2px solid;
+        background: linear-gradient(180deg,
+                                hsla(93, 8%, 8%),
+                                #C22E28);
+    }
+
+    .poison {
+        border: #A33EA1 2px solid;
+        background: linear-gradient(180deg,
+                                hsla(93, 8%, 8%),
+                                #A33EA1);
+    }
+
+    .ground {
+        border: #E2BF65 2px solid;
+        background: linear-gradient(180deg,
+                                hsla(93, 8%, 8%),
+                                #E2BF65);
+    }
+
+    .flying {
+        border: #A98FF3 2px solid;
+        background: linear-gradient(180deg,
+                                hsla(93, 8%, 8%),
+                                #A98FF3);
+    }
+
+    .psychic {
+        border: #F95587 2px solid;
+        background: linear-gradient(180deg,
+                                hsla(93, 8%, 8%),
+                                #F95587);
+    }
+
+    .bug {
+        border: #A6B91A 2px solid;
+        background: linear-gradient(180deg,
+                                hsla(93, 8%, 8%),
+                                #A6B91A);
+    }
+
+    .rock {
+        border: #B6A136 2px solid;
+        background: linear-gradient(180deg,
+                                hsla(93, 8%, 8%),
+                                #B6A136);
+    }
+
+    .ghost {
+        border:  #735797 2px solid;
+        background: linear-gradient(180deg,
+                                hsla(93, 8%, 8%),
+                                 #735797);
+    }
+
+    .dragon {
+        border: #6F35FC 2px solid;
+        background: linear-gradient(180deg,
+                                hsla(93, 8%, 8%),
+                                #6F35FC);
+    }
+
+    .dark {
+        border: #705746 2px solid;
+        background: linear-gradient(180deg,
+                                hsla(93, 8%, 8%),
+                                #705746);
+    }
+
+    .steel {
+        border: #B7B7CE 2px solid;
+        background: linear-gradient(180deg,
+                                hsla(93, 8%, 8%),
+                                #B7B7CE);
+    }
+
+    .fairy {
+        border: #D685AD 2px solid;
+        background: linear-gradient(180deg,
+                                hsla(93, 8%, 8%),
+                                #D685AD);
+    }
+
+    .Common {
+        border: #8d838f 1px solid;
+    }
+
+    .Rare {
+        border: #ffc814 1px solid;
+        padding: 4px 8px;
+        /* border-width: 1px;
+        border-style: solid;
+        border-image: linear-gradient( 111.4deg,  rgba(238,113,113,1) 1%, rgba(246,215,148,1) 58% ) 1;
+        border-radius: 50em; */
+    }
+
+
+</style>

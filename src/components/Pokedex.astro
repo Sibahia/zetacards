@@ -1,0 +1,41 @@
+---
+// import CardPokemons from "./CardPokemons.astro";
+
+// function getPokemons () {
+//     fetch('https://pokeapi.co/api/v2/pokemon?offset=20&limit=20')
+//     .then(res => res.json())
+//     .then(function (dataPoks) {
+//         dataPoks.results.forEach(function (pokemon) {
+//             PokemonData(pokemon);
+//         })
+//     })
+
+// function PokemonData (pokemon){
+// let url = pokemon.url // <--- this is saving the pokemon url to a      variable to us in a fetch.(Ex: https://pokeapi.co/api/v2/pokemon/1/)
+//   fetch(url)
+//   .then(response => response.json())
+//   .then(function(pokeData){
+//   console.log(pokeData)
+//   })
+// }
+
+// }
+
+/* 
+const res = await fetch('https://pokeapi.co/api/v2/pokemon?offset=20&limit=20');
+const data = await res.json();
+const dataPokedex = data.results.forEach();
+*/
+
+console.log(PokemonData)
+---
+
+<div class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+    {
+        PokemonData((Poks) => 
+        <CardPokemons 
+        name={Poks.name.charAt(0).toUpperCase() + Poks.name.slice(1)}
+        />
+        )
+    }
+</div> -->
