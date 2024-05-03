@@ -5,6 +5,6 @@
 
 > **Pokedex**
 
-![pokedex](https://prnt.sc/lMtp2Vu2UrOJ)
+![pokedex](https://i.imgur.com/iLVcqGF.png)
 
 
