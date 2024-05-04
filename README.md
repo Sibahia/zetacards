@@ -3,6 +3,7 @@
 Pokedex created with HTML/CSS/JAVASRIPT using the Astro framework, using different card layouts.
 
 All the information is obtained from POKEAPI
+[![PokeAPI](https://pokeapi.co)
 
 > [!NOTE]
 > It is created with the purpose of learning, was made use of designs for the realization of the letter as a guide, but all the styling is from 0. guide, but all the styling is from 0.
@@ -31,10 +32,10 @@ Toda la información es obtenida de POKEAPI
 
 ##### Contiene:
 
-- estilo de cartas para pokedex
-- estilo de cartas para pokemon info
-- identificación de rareza de pokemons
-- datos usando api
+- Estilo de cartas para pokedex
+- Estilo de cartas para pokemon info
+- Identificación de rareza de pokemons
+- Datos usando api
 
 
 ### **Pokedex**
