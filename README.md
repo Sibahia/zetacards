@@ -2,8 +2,7 @@
 
 Pokedex created with HTML/CSS/JAVASRIPT using the Astro framework, using different card layouts.
 
-All the information is obtained from POKEAPI
-[PokeAPI](https://pokeapi.co)
+All the information is obtained from [PokeAPI](https://pokeapi.co)
 
 > [!NOTE]
 > It is created with the purpose of learning, was made use of designs for the realization of the letter as a guide, but all the styling is from 0. guide, but all the styling is from 0.
