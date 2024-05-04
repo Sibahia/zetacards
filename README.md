@@ -26,7 +26,7 @@ All the information is obtained from [PokeAPI](https://pokeapi.co)
 
 Pokedex creada con HTML/CSS/JAVASRIPT usando el framework Astro, usando diferentes diseños de cartas.
 
-Toda la información es obtenida de POKEAPI
+Toda la información es obtenida de [PokeAPI](https://pokeapi.co)
 
 
 ##### Contiene:
