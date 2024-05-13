@@ -1,6 +1,6 @@
 # Pokemon Cards
 
-Pokedex created with HTML/CSS/JAVASRIPT using the Astro framework, using different card layouts.
+Pokedex created with HTML/CSS/JAVASCRIPT using the Astro framework, using different card layouts.
 
 All the information is obtained from [PokeAPI](https://pokeapi.co)
 
@@ -24,7 +24,7 @@ All the information is obtained from [PokeAPI](https://pokeapi.co)
 
 # Cartas Pokemon
 
-Pokedex creada con HTML/CSS/JAVASRIPT usando el framework Astro, usando diferentes diseños de cartas.
+Pokedex creada con HTML/CSS/JAVASCRIPT usando el framework Astro, usando diferentes diseños de cartas.
 
 Toda la información es obtenida de [PokeAPI](https://pokeapi.co)
 
